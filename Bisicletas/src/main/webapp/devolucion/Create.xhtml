@@ -12,8 +12,6 @@
             <h:form id="DevolucionCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{devolucionController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateDevolucionLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{devolucionController.selected.id}" title="#{bundle.CreateDevolucionTitle_id}" required="true" requiredMessage="#{bundle.CreateDevolucionRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateDevolucionLabel_fecha}" for="fecha" />
                         <p:calendar id="fecha" pattern="MM/dd/yyyy HH:mm:ss" value="#{devolucionController.selected.fecha}" title="#{bundle.EditDevolucionTitle_fecha}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateDevolucionLabel_observacion}" for="observacion" />

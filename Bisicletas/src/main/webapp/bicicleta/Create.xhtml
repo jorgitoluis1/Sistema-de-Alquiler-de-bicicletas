@@ -12,8 +12,6 @@
             <h:form id="BicicletaCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{bicicletaController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateBicicletaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{bicicletaController.selected.id}" title="#{bundle.CreateBicicletaTitle_id}" required="true" requiredMessage="#{bundle.CreateBicicletaRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateBicicletaLabel_modelo}" for="modelo" />
                         <p:inputText id="modelo" value="#{bicicletaController.selected.modelo}" title="#{bundle.CreateBicicletaTitle_modelo}" />
                         <p:outputLabel value="#{bundle.CreateBicicletaLabel_descripcion}" for="descripcion" />
