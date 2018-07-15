@@ -16,8 +16,6 @@
                         <p:inputText id="nombres" value="#{clienteController.selected.nombres}" title="#{bundle.CreateClienteTitle_nombres}" />
                         <p:outputLabel value="#{bundle.CreateClienteLabel_apellidos}" for="apellidos" />
                         <p:inputText id="apellidos" value="#{clienteController.selected.apellidos}" title="#{bundle.CreateClienteTitle_apellidos}" />
-                        <p:outputLabel value="#{bundle.CreateClienteLabel_estado}" for="estado" />
-                        <p:inputText id="estado" value="#{clienteController.selected.estado}" title="#{bundle.CreateClienteTitle_estado}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{clienteController.create}" value="#{bundle.Save}" update="display,:ClienteListForm:datalist,:growl" oncomplete="handleSubmit(args,'ClienteCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="ClienteCreateDialog.hide()"/>

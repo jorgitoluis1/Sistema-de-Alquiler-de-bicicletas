@@ -12,8 +12,7 @@
             <h:form id="ReservacionViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{reservacionController.selected != null}">
-                        <h:outputText value="#{bundle.ViewReservacionLabel_id}"/>
-                        <h:outputText value="#{reservacionController.selected.id}" title="#{bundle.ViewReservacionTitle_id}"/>
+
                         <h:outputText value="#{bundle.ViewReservacionLabel_fechaReservacion}"/>
                         <h:outputText value="#{reservacionController.selected.fechaReservacion}" title="#{bundle.ViewReservacionTitle_fechaReservacion}">
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />

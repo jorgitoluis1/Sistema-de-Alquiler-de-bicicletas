@@ -12,8 +12,6 @@
             <h:form id="DevolucionViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{devolucionController.selected != null}">
-                        <h:outputText value="#{bundle.ViewDevolucionLabel_id}"/>
-                        <h:outputText value="#{devolucionController.selected.id}" title="#{bundle.ViewDevolucionTitle_id}"/>
                         <h:outputText value="#{bundle.ViewDevolucionLabel_fecha}"/>
                         <h:outputText value="#{devolucionController.selected.fecha}" title="#{bundle.ViewDevolucionTitle_fecha}">
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
