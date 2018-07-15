@@ -20,6 +20,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -57,6 +58,8 @@ public class Bicicleta implements Serializable {
     @JoinColumn(name = "id_marca", referencedColumnName = "id")
     @ManyToOne
     private Marca idMarca;
+    @Transient
+    private String detalle;
 
     public Bicicleta() {
     }
@@ -134,6 +137,16 @@ public class Bicicleta implements Serializable {
         }
         return true;
     }
+
+    public String getDetalle() {
+        detalle="";
+        if(this.idMarca!=null){
+            detalle=this.idMarca.getNombre()+" ";
+        }
+        detalle+=this.modelo+" "+this.descripcion;
+        return detalle;
+    }
+    
 
     @Override
     public String toString() {

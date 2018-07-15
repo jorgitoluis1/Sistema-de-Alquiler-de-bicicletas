@@ -49,9 +49,11 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListPrestamoTitle_idReservacion}"/>
+                                <h:outputText value="Fecha de Reservacion"/>
                             </f:facet>
-                            <h:outputText value="#{item.idReservacion}"/>
+                            <h:outputText value="#{item.idReservacion.fechaReservacion}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
                         </p:column>
                         <p:column>
                             <f:facet name="header">

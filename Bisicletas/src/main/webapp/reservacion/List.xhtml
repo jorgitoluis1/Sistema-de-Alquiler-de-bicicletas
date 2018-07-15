@@ -57,7 +57,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListReservacionTitle_idBicicleta}"/>
                             </f:facet>
-                            <h:outputText value="#{item.idBicicleta}"/>
+                            <h:outputText value="#{item.idBicicleta.detalle}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{reservacionController.prepareCreate}" update=":ReservacionCreateForm" oncomplete="PF('ReservacionCreateDialog').show()"/>
