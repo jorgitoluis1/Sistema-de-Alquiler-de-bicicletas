@@ -16,6 +16,11 @@
     
     <dependencies>
         <dependency>
+	<groupId>org.primefaces.themes</groupId>
+	<artifactId>south-street</artifactId>
+	<version>1.0.10</version>
+	</dependency>
+        <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.antlr</artifactId>
             <version>2.6.1-RC1</version>

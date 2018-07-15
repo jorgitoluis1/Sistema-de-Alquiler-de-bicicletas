@@ -5,9 +5,11 @@
  */
 package utpl.proyectos.bisicletas.logica;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import utpl.proyectos.bisicletas.entidades.Usuario;
 
 /**
@@ -27,6 +29,18 @@ public class UsuarioFacade extends AbstractFacade<Usuario> {
 
     public UsuarioFacade() {
         super(Usuario.class);
+    }
+    
+    public Usuario login(String username,String password){
+        Query q=getEntityManager().createQuery("SELECT u FROM Usuario u WHERE u.nick=:user AND u.password=:password");
+        q.setParameter("user", username);
+        q.setParameter("password", password);
+        List<Usuario> lista=q.getResultList();
+        if(lista.size()>0){
+            return lista.get(0);
+        }else{
+            return null;
+        }
     }
     
 }
