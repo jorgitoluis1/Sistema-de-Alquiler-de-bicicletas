@@ -12,14 +12,11 @@
             <h:form id="ClienteEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{clienteController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditClienteLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{clienteController.selected.id}" title="#{bundle.EditClienteTitle_id}" required="true" requiredMessage="#{bundle.EditClienteRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditClienteLabel_nombres}" for="nombres" />
                         <p:inputText id="nombres" value="#{clienteController.selected.nombres}" title="#{bundle.EditClienteTitle_nombres}" />
                         <p:outputLabel value="#{bundle.EditClienteLabel_apellidos}" for="apellidos" />
                         <p:inputText id="apellidos" value="#{clienteController.selected.apellidos}" title="#{bundle.EditClienteTitle_apellidos}" />
-                        <p:outputLabel value="#{bundle.EditClienteLabel_estado}" for="estado" />
-                        <p:inputText id="estado" value="#{clienteController.selected.estado}" title="#{bundle.EditClienteTitle_estado}" />
+                        
                     </p:panelGrid>
                     <p:commandButton actionListener="#{clienteController.update}" value="#{bundle.Save}" update="display,:ClienteListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ClienteEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="ClienteEditDialog.hide()"/>

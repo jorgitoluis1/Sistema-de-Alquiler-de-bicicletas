@@ -12,12 +12,9 @@
             <h:form id="MarcaEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{marcaController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditMarcaLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{marcaController.selected.id}" title="#{bundle.EditMarcaTitle_id}" required="true" requiredMessage="#{bundle.EditMarcaRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditMarcaLabel_nombre}" for="nombre" />
                         <p:inputText id="nombre" value="#{marcaController.selected.nombre}" title="#{bundle.EditMarcaTitle_nombre}" />
-                        <p:outputLabel value="#{bundle.EditMarcaLabel_estado}" for="estado" />
-                        <p:inputText id="estado" value="#{marcaController.selected.estado}" title="#{bundle.EditMarcaTitle_estado}" />
+                        
                     </p:panelGrid>
                     <p:commandButton actionListener="#{marcaController.update}" value="#{bundle.Save}" update="display,:MarcaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'MarcaEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="MarcaEditDialog.hide()"/>

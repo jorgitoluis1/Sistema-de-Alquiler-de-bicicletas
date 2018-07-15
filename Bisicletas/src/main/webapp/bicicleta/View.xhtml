@@ -12,8 +12,6 @@
             <h:form id="BicicletaViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{bicicletaController.selected != null}">
-                        <h:outputText value="#{bundle.ViewBicicletaLabel_id}"/>
-                        <h:outputText value="#{bicicletaController.selected.id}" title="#{bundle.ViewBicicletaTitle_id}"/>
                         <h:outputText value="#{bundle.ViewBicicletaLabel_modelo}"/>
                         <h:outputText value="#{bicicletaController.selected.modelo}" title="#{bundle.ViewBicicletaTitle_modelo}"/>
                         <h:outputText value="#{bundle.ViewBicicletaLabel_descripcion}"/>

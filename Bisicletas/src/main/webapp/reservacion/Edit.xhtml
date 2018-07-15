@@ -12,8 +12,6 @@
             <h:form id="ReservacionEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{reservacionController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditReservacionLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{reservacionController.selected.id}" title="#{bundle.EditReservacionTitle_id}" required="true" requiredMessage="#{bundle.EditReservacionRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.EditReservacionLabel_fechaReservacion}" for="fechaReservacion" />
                         <p:calendar id="fechaReservacion" pattern="MM/dd/yyyy HH:mm:ss" value="#{reservacionController.selected.fechaReservacion}" title="#{bundle.EditReservacionTitle_fechaReservacion}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.EditReservacionLabel_idCliente}" for="idCliente" />

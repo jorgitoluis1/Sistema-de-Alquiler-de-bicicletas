@@ -12,10 +12,6 @@
             <h:form id="PrestamoEditForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{prestamoController.selected != null}">
-                        <p:outputLabel value="#{bundle.EditPrestamoLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{prestamoController.selected.id}" title="#{bundle.EditPrestamoTitle_id}" required="true" requiredMessage="#{bundle.EditPrestamoRequiredMessage_id}"/>
-                        <p:outputLabel value="#{bundle.EditPrestamoLabel_estado}" for="estado" />
-                        <p:inputText id="estado" value="#{prestamoController.selected.estado}" title="#{bundle.EditPrestamoTitle_estado}" />
                         <p:outputLabel value="#{bundle.EditPrestamoLabel_fecha}" for="fecha" />
                         <p:calendar id="fecha" pattern="MM/dd/yyyy HH:mm:ss" value="#{prestamoController.selected.fecha}" title="#{bundle.EditPrestamoTitle_fecha}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.EditPrestamoLabel_idReservacion}" for="idReservacion" />

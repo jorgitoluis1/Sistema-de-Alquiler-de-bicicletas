@@ -12,12 +12,8 @@
             <h:form id="MarcaViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{marcaController.selected != null}">
-                        <h:outputText value="#{bundle.ViewMarcaLabel_id}"/>
-                        <h:outputText value="#{marcaController.selected.id}" title="#{bundle.ViewMarcaTitle_id}"/>
                         <h:outputText value="#{bundle.ViewMarcaLabel_nombre}"/>
                         <h:outputText value="#{marcaController.selected.nombre}" title="#{bundle.ViewMarcaTitle_nombre}"/>
-                        <h:outputText value="#{bundle.ViewMarcaLabel_estado}"/>
-                        <h:outputText value="#{marcaController.selected.estado}" title="#{bundle.ViewMarcaTitle_estado}"/>
                     </p:panelGrid>
                     <p:commandButton value="#{bundle.Close}" onclick="MarcaViewDialog.hide()"/>
                 </h:panelGroup>
