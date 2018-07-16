@@ -59,13 +59,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListPrestamoTitle_idCliente}"/>
                             </f:facet>
-                            <h:outputText value="#{item.idCliente}"/>
+                            <h:outputText value="#{item.idCliente.nombreCompleto}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListPrestamoTitle_idBicicleta}"/>
                             </f:facet>
-                            <h:outputText value="#{item.idBicicleta}"/>
+                            <h:outputText value="#{item.idBicicleta.detalle}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{prestamoController.prepareCreate}" update=":PrestamoCreateForm" oncomplete="PF('PrestamoCreateDialog').show()"/>

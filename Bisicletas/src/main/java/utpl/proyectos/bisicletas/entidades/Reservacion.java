@@ -49,10 +49,12 @@ public class Reservacion implements Serializable {
     @Column(name = "fecha_reservacion")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaReservacion;
-    @Column(name = "id_cliente")
-    private Integer idCliente;
-    @Column(name = "id_usuario")
-    private Integer idUsuario;
+    @JoinColumn(name = "id_cliente", referencedColumnName = "id")
+    @ManyToOne
+    private Cliente idCliente;
+   @JoinColumn(name = "id_usuario", referencedColumnName = "id")
+    @ManyToOne
+    private Usuario idUsuario;
     @JoinColumn(name = "id_bicicleta", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Bicicleta idBicicleta;
@@ -60,6 +62,14 @@ public class Reservacion implements Serializable {
     private List<Prestamo> prestamoList;
 
     public Reservacion() {
+    }
+
+    public Cliente getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Cliente idCliente) {
+        this.idCliente = idCliente;
     }
 
     public Reservacion(Integer id) {
@@ -82,19 +92,11 @@ public class Reservacion implements Serializable {
         this.fechaReservacion = fechaReservacion;
     }
 
-    public Integer getIdCliente() {
-        return idCliente;
-    }
-
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
-    }
-
-    public Integer getIdUsuario() {
+    public Usuario getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
+    public void setIdUsuario(Usuario idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -139,5 +141,5 @@ public class Reservacion implements Serializable {
     public String toString() {
         return "utpl.proyectos.bisicletas.entidades.Reservacion[ id=" + id + " ]";
     }
-    
+
 }

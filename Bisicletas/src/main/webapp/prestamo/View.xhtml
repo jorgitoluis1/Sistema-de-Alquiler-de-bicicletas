@@ -20,14 +20,16 @@
                         <h:outputText value="#{prestamoController.selected.fecha}" title="#{bundle.ViewPrestamoTitle_fecha}">
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </h:outputText>
-                        <h:outputText value="#{bundle.ViewPrestamoLabel_idReservacion}"/>
-                        <h:outputText value="#{prestamoController.selected.idReservacion}" title="#{bundle.ViewPrestamoTitle_idReservacion}"/>
+                        <h:outputText value="Fecha de Reservacion"/>
+                        <h:outputText value="#{prestamoController.selected.idReservacion.fechaReservacion}" >
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
                         <h:outputText value="#{bundle.ViewPrestamoLabel_idCliente}"/>
-                        <h:outputText value="#{prestamoController.selected.idCliente}" title="#{bundle.ViewPrestamoTitle_idCliente}"/>
+                        <h:outputText value="#{prestamoController.selected.idCliente.nombreCompleto}" title="#{bundle.ViewPrestamoTitle_idCliente}"/>
                         <h:outputText value="#{bundle.ViewPrestamoLabel_idBicicleta}"/>
-                        <h:outputText value="#{prestamoController.selected.idBicicleta}" title="#{bundle.ViewPrestamoTitle_idBicicleta}"/>
+                        <h:outputText value="#{prestamoController.selected.idBicicleta.detalle}" title="#{bundle.ViewPrestamoTitle_idBicicleta}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="PrestamoViewDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Close}" onclick="PF('PrestamoViewDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

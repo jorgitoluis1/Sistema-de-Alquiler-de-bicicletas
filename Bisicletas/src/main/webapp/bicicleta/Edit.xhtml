@@ -21,11 +21,12 @@
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{marcaController.itemsAvailableSelectOne}"
                                            var="idMarcaItem"
-                                           itemValue="#{idMarcaItem}"/>
+                                           itemValue="#{idMarcaItem}"
+                                            itemLabel="#{idMarcaItem.nombre}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{bicicletaController.update}" value="#{bundle.Save}" update="display,:BicicletaListForm:datalist,:growl" oncomplete="handleSubmit(args, 'BicicletaEditDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="BicicletaEditDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PF('BicicletaEditDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

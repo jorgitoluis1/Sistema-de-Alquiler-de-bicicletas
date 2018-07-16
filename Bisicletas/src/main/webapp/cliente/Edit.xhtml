@@ -19,7 +19,7 @@
                         
                     </p:panelGrid>
                     <p:commandButton actionListener="#{clienteController.update}" value="#{bundle.Save}" update="display,:ClienteListForm:datalist,:growl" oncomplete="handleSubmit(args, 'ClienteEditDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="ClienteEditDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PF('ClienteEditDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

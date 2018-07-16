@@ -17,26 +17,29 @@
                         <p:outputLabel value="#{bundle.CreatePrestamoLabel_fecha}" for="fecha" />
                         <p:calendar id="fecha" pattern="MM/dd/yyyy HH:mm:ss" value="#{prestamoController.selected.fecha}" title="#{bundle.EditPrestamoTitle_fecha}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.CreatePrestamoLabel_idReservacion}" for="idReservacion" />
-                        <p:selectOneMenu id="idReservacion" value="#{prestamoController.selected.idReservacion}" >
+                        <p:selectOneMenu id="idReservacion" value="Reservacion Cliente" >
                             <f:selectItems value="#{reservacionController.itemsAvailableSelectOne}"
                                            var="idReservacionItem"
-                                           itemValue="#{idReservacionItem}"/>
+                                           itemValue="#{idReservacionItem}"
+                                           itemLabel="#{idReservacionItem.idCliente.nombreCompleto}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreatePrestamoLabel_idCliente}" for="idCliente" />
                         <p:selectOneMenu id="idCliente" value="#{prestamoController.selected.idCliente}" >
                             <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"
                                            var="idClienteItem"
-                                           itemValue="#{idClienteItem}"/>
+                                           itemValue="#{idClienteItem}"
+                                           itemLabel="#{idClienteItem.nombreCompleto}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreatePrestamoLabel_idBicicleta}" for="idBicicleta" />
                         <p:selectOneMenu id="idBicicleta" value="#{prestamoController.selected.idBicicleta}" >
                             <f:selectItems value="#{bicicletaController.itemsAvailableSelectOne}"
                                            var="idBicicletaItem"
-                                           itemValue="#{idBicicletaItem}"/>
+                                           itemValue="#{idBicicletaItem}"
+                                           itemLabel="#{idBicicletaItem.detalle}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{prestamoController.create}" value="#{bundle.Save}" update="display,:PrestamoListForm:datalist,:growl" oncomplete="handleSubmit(args,'PrestamoCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="PrestamoCreateDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PF('PrestamoCreateDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

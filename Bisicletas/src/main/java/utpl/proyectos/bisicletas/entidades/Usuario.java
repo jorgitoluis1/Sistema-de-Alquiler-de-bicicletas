@@ -15,6 +15,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -60,6 +61,8 @@ public class Usuario implements Serializable {
     @Size(max = 200)
     @Column(name = "tipo")
     private String tipo;
+    @Transient
+    private String nombreCompleto;
 
     public Usuario() {
     }
@@ -131,6 +134,12 @@ public class Usuario implements Serializable {
         return hash;
     }
 
+    public String getNombreCompleto() {
+        nombreCompleto=this.nombres+" "+this.apellidos;
+        return nombreCompleto;
+    }
+
+    
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set

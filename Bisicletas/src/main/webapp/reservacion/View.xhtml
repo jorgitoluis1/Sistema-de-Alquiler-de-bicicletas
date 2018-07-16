@@ -18,13 +18,13 @@
                             <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
                         </h:outputText>
                         <h:outputText value="#{bundle.ViewReservacionLabel_idCliente}"/>
-                        <h:outputText value="#{reservacionController.selected.idCliente}" title="#{bundle.ViewReservacionTitle_idCliente}"/>
+                        <h:outputText value="#{reservacionController.selected.idCliente.nombreCompleto}" title="#{bundle.ViewReservacionTitle_idCliente}"/>
                         <h:outputText value="#{bundle.ViewReservacionLabel_idUsuario}"/>
-                        <h:outputText value="#{reservacionController.selected.idUsuario}" title="#{bundle.ViewReservacionTitle_idUsuario}"/>
+                        <h:outputText value="#{reservacionController.selected.idUsuario.nombreCompleto}" title="#{bundle.ViewReservacionTitle_idUsuario}"/>
                         <h:outputText value="#{bundle.ViewReservacionLabel_idBicicleta}"/>
-                        <h:outputText value="#{reservacionController.selected.idBicicleta}" title="#{bundle.ViewReservacionTitle_idBicicleta}"/>
+                        <h:outputText value="#{reservacionController.selected.idBicicleta.detalle}" title="#{bundle.ViewReservacionTitle_idBicicleta}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="ReservacionViewDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Close}" onclick="PF('ReservacionViewDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

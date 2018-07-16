@@ -14,19 +14,25 @@
                     <p:panelGrid columns="2" rendered="#{reservacionController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateReservacionLabel_fechaReservacion}" for="fechaReservacion" />
                         <p:calendar id="fechaReservacion" pattern="MM/dd/yyyy HH:mm:ss" value="#{reservacionController.selected.fechaReservacion}" title="#{bundle.EditReservacionTitle_fechaReservacion}"  showOn="button"/>
-                        <p:outputLabel value="#{bundle.CreateReservacionLabel_idCliente}" for="idCliente" />
-                        <p:inputText id="idCliente" value="#{reservacionController.selected.idCliente}" title="#{bundle.CreateReservacionTitle_idCliente}" />
+                        <p:outputLabel value="#{bundle.CreatePrestamoLabel_idCliente}" for="idCliente" />
+                        <p:selectOneMenu id="idCliente" value="#{reservacionController.selected.idCliente}" >
+                            <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"
+                                           var="idClienteItem"
+                                           itemValue="#{idClienteItem}"
+                                           itemLabel="#{idClienteItem.nombreCompleto}"/>
+                        </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateReservacionLabel_idUsuario}" for="idUsuario" />
-                        <p:inputText id="idUsuario" value="#{reservacionController.selected.idUsuario}" title="#{bundle.CreateReservacionTitle_idUsuario}" />
+                        <h:outputText id="idUsuario" value="#{reservacionController.selected.idUsuario.nombreCompleto}" title="#{bundle.CreateReservacionTitle_idUsuario}" />
                         <p:outputLabel value="#{bundle.CreateReservacionLabel_idBicicleta}" for="idBicicleta" />
                         <p:selectOneMenu id="idBicicleta" value="#{reservacionController.selected.idBicicleta}" required="true" requiredMessage="#{bundle.EditReservacionRequiredMessage_idBicicleta}">
                             <f:selectItems value="#{bicicletaController.itemsAvailableSelectOne}"
                                            var="idBicicletaItem"
-                                           itemValue="#{idBicicletaItem}"/>
+                                           itemValue="#{idBicicletaItem}"
+                                           itemLabel="#{idBicicletaItem.detalle}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{reservacionController.create}" value="#{bundle.Save}" update="display,:ReservacionListForm:datalist,:growl" oncomplete="handleSubmit(args,'ReservacionCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="ReservacionCreateDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PF('ReservacionCreateDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

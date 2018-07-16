@@ -17,6 +17,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
@@ -53,6 +54,8 @@ public class Cliente implements Serializable {
     private String estado;
     @OneToMany(mappedBy = "idCliente")
     private List<Prestamo> prestamoList;
+    @Transient
+    private String nombreCompleto;
 
     public Cliente() {
     }
@@ -121,6 +124,17 @@ public class Cliente implements Serializable {
         }
         return true;
     }
+
+    public String getNombreCompleto() {
+        if(nombres!=null){
+            nombreCompleto+=nombres+" ";
+        }
+        if(apellidos!=null){
+            nombreCompleto+=apellidos;
+        }
+        return nombreCompleto;
+    }
+    
 
     @Override
     public String toString() {

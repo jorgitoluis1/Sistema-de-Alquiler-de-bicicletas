@@ -19,25 +19,27 @@
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{reservacionController.itemsAvailableSelectOne}"
                                            var="idReservacionItem"
-                                           itemValue="#{idReservacionItem}"/>
+                                          itemValue="#{idReservacionItem}"
+                                           itemLabel="#{idReservacionItem.idCliente.nombreCompleto}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.EditPrestamoLabel_idCliente}" for="idCliente" />
                         <p:selectOneMenu id="idCliente" value="#{prestamoController.selected.idCliente}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"
                                            var="idClienteItem"
-                                           itemValue="#{idClienteItem}"/>
+                                           itemValue="#{idClienteItem}"
+                                           itemLabel="#{idClienteItem.nombreCompleto}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.EditPrestamoLabel_idBicicleta}" for="idBicicleta" />
                         <p:selectOneMenu id="idBicicleta" value="#{prestamoController.selected.idBicicleta}" >
                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
                             <f:selectItems value="#{bicicletaController.itemsAvailableSelectOne}"
-                                           var="idBicicletaItem"
-                                           itemValue="#{idBicicletaItem}"/>
+                                          itemValue="#{idBicicletaItem}"
+                                           itemLabel="#{idBicicletaItem.detalle}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
                     <p:commandButton actionListener="#{prestamoController.update}" value="#{bundle.Save}" update="display,:PrestamoListForm:datalist,:growl" oncomplete="handleSubmit(args, 'PrestamoEditDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="PrestamoEditDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PF('PrestamoEditDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

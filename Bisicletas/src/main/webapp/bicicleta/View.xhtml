@@ -17,9 +17,9 @@
                         <h:outputText value="#{bundle.ViewBicicletaLabel_descripcion}"/>
                         <h:outputText value="#{bicicletaController.selected.descripcion}" title="#{bundle.ViewBicicletaTitle_descripcion}"/>
                         <h:outputText value="#{bundle.ViewBicicletaLabel_idMarca}"/>
-                        <h:outputText value="#{bicicletaController.selected.idMarca}" title="#{bundle.ViewBicicletaTitle_idMarca}"/>
+                        <h:outputText value="#{bicicletaController.selected.idMarca.nombre}" title="#{bundle.ViewBicicletaTitle_idMarca}"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="BicicletaViewDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Close}" onclick="PF('BicicletaViewDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

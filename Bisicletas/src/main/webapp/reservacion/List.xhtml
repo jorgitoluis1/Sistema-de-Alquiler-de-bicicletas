@@ -45,13 +45,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListReservacionTitle_idCliente}"/>
                             </f:facet>
-                            <h:outputText value="#{item.idCliente}"/>
+                            <h:outputText value="#{item.idCliente.nombreCompleto}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListReservacionTitle_idUsuario}"/>
                             </f:facet>
-                            <h:outputText value="#{item.idUsuario}"/>
+                            <h:outputText value="#{item.idUsuario.nombreCompleto}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">

@@ -18,7 +18,7 @@
                         <p:inputText id="apellidos" value="#{clienteController.selected.apellidos}" title="#{bundle.CreateClienteTitle_apellidos}" />
                     </p:panelGrid>
                     <p:commandButton actionListener="#{clienteController.create}" value="#{bundle.Save}" update="display,:ClienteListForm:datalist,:growl" oncomplete="handleSubmit(args,'ClienteCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="ClienteCreateDialog.hide()"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="PF('ClienteCreateDialog').hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
