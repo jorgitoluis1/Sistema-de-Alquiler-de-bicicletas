@@ -12,8 +12,6 @@
             <h:form id="UsuarioCreateForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{usuarioController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateUsuarioLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{usuarioController.selected.id}" title="#{bundle.CreateUsuarioTitle_id}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_id}"/>
                         <p:outputLabel value="#{bundle.CreateUsuarioLabel_nombres}" for="nombres" />
                         <p:inputText id="nombres" value="#{usuarioController.selected.nombres}" title="#{bundle.CreateUsuarioTitle_nombres}" />
                         <p:outputLabel value="#{bundle.CreateUsuarioLabel_apellidos}" for="apellidos" />
@@ -22,8 +20,7 @@
                         <p:inputText id="nick" value="#{usuarioController.selected.nick}" title="#{bundle.CreateUsuarioTitle_nick}" />
                         <p:outputLabel value="#{bundle.CreateUsuarioLabel_password}" for="password" />
                         <p:inputText id="password" value="#{usuarioController.selected.password}" title="#{bundle.CreateUsuarioTitle_password}" />
-                        <p:outputLabel value="#{bundle.CreateUsuarioLabel_estado}" for="estado" />
-                        <p:inputText id="estado" value="#{usuarioController.selected.estado}" title="#{bundle.CreateUsuarioTitle_estado}" />
+                       
                         <p:outputLabel value="#{bundle.CreateUsuarioLabel_tipo}" for="tipo" />
                         <p:inputText id="tipo" value="#{usuarioController.selected.tipo}" title="#{bundle.CreateUsuarioTitle_tipo}" />
                     </p:panelGrid>
