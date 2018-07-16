@@ -126,6 +126,7 @@ public class Cliente implements Serializable {
     }
 
     public String getNombreCompleto() {
+        nombreCompleto="";
         if(nombres!=null){
             nombreCompleto+=nombres+" ";
         }
